@@ -3,17 +3,15 @@ import sbt._
 import sbt.Keys._
 
 object PlayBuild extends Build {
-  lazy val utilPlay = SbtUtils.testableProject("play-base").settings(projectSettings: _*)
+  lazy val playBase = SbtUtils.testableProject("play-base").enablePlugins(play.PlayScala).settings(projectSettings: _*)
 
-  lazy val projectSettings =
-    SbtUtils.publishSettings ++
-      play.Project.playScalaSettings ++ Seq(
-      scalaVersion := "2.10.4",
-      version := "0.0.4",
+  lazy val projectSettings = SbtUtils.publishSettings ++ Seq(
+      scalaVersion := "2.11.2",
+      version := "0.1.0",
       SbtUtils.gitUserName := "malliina",
       SbtUtils.developerName := "Michael Skogberg",
       libraryDependencies ++= Seq(
-        "com.github.malliina" %% "util-play" % "1.2.1"),
+        "com.github.malliina" %% "util-play" % "1.4.3"),
       fork in Test := true,
       exportJars := false
     )
