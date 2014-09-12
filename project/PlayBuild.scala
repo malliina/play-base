@@ -1,12 +1,13 @@
-import com.mle.play.PlayProjects
-import com.mle.sbtutils.SbtUtils
+import com.mle.sbtutils.{SbtProjects, SbtUtils}
 import sbt.Keys._
 import sbt._
 
 object PlayBuild extends Build {
-  lazy val playBase = PlayProjects.playProject("play-base").settings(projectSettings: _*)
+  lazy val playBase = SbtProjects.mavenPublishProject("play-base")
+    .enablePlugins(play.PlayScala)
+    .settings(projectSettings: _*)
 
-  lazy val projectSettings = SbtUtils.publishSettings ++ Seq(
+  lazy val projectSettings = Seq(
     scalaVersion := "2.11.2",
     version := "0.1.1",
     SbtUtils.gitUserName := "malliina",
