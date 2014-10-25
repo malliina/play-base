@@ -9,10 +9,10 @@ object PlayBuild extends Build {
 
   lazy val projectSettings = Seq(
     scalaVersion := "2.11.2",
-    version := "0.1.1",
+    version := "0.1.2",
     SbtUtils.gitUserName := "malliina",
     SbtUtils.developerName := "Michael Skogberg",
-    libraryDependencies ++= Seq("com.github.malliina" %% "util-play" % "1.5.8"),
+    libraryDependencies ++= Seq("com.github.malliina" %% "util-play" % "1.6.7"),
     fork in Test := true,
     exportJars := false
   )
