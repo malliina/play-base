@@ -8,11 +8,11 @@ object PlayBuild extends Build {
     .settings(projectSettings: _*)
 
   lazy val projectSettings = Seq(
-    scalaVersion := "2.11.4",
-    version := "0.2.2",
+    scalaVersion := "2.11.6",
+    version := "0.3.0",
     SbtUtils.gitUserName := "malliina",
     SbtUtils.developerName := "Michael Skogberg",
-    libraryDependencies ++= Seq("com.github.malliina" %% "util-play" % "1.7.1"),
+    libraryDependencies ++= Seq("com.github.malliina" %% "util-play" % "1.8.0"),
     resolvers ++= Seq(
       "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/",
       "Sonatype releases" at "https://oss.sonatype.org/content/repositories/releases/"),
