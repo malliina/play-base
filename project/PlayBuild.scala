@@ -1,19 +1,21 @@
-import com.mle.sbtutils.{SbtProjects, SbtUtils}
+import bintray.Plugin.bintraySettings
+import com.mle.sbtutils.SbtProjects
+import com.mle.sbtutils.SbtUtils.{developerName, gitUserName}
 import sbt.Keys._
 import sbt._
-import bintray.Plugin.bintraySettings
 
 object PlayBuild extends Build {
-  lazy val playBase = SbtProjects.mavenPublishProject("play-base")
+  lazy val playBase = SbtProjects.testableProject("play-base")
     .enablePlugins(play.PlayScala)
     .settings(projectSettings: _*)
 
   lazy val projectSettings = bintraySettings ++ Seq(
     scalaVersion := "2.11.6",
-    version := "0.4.2",
-    SbtUtils.gitUserName := "malliina",
-    SbtUtils.developerName := "Michael Skogberg",
-    libraryDependencies ++= Seq("com.github.malliina" %% "util-play" % "1.9.2"),
+    version := "0.4.3",
+    gitUserName := "malliina",
+    developerName := "Michael Skogberg",
+    organization := s"com.github.${gitUserName.value}",
+    libraryDependencies ++= Seq("com.github.malliina" %% "util-play" % "1.9.3"),
     resolvers ++= Seq(
       "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/",
       "Sonatype releases" at "https://oss.sonatype.org/content/repositories/releases/",
