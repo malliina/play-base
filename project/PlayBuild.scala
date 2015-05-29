@@ -5,7 +5,7 @@ import sbt._
 
 object PlayBuild extends Build {
   lazy val playBase = SbtProjects.testableProject("play-base")
-    .enablePlugins(play.PlayScala, bintray.BintrayPlugin)
+    .enablePlugins(play.sbt.PlayScala, bintray.BintrayPlugin)
     .settings(projectSettings: _*)
 
   lazy val projectSettings = Seq(
