@@ -9,12 +9,12 @@ object PlayBuild extends Build {
     .settings(projectSettings: _*)
 
   lazy val projectSettings = Seq(
-    scalaVersion := "2.11.6",
-    version := "0.5.0",
+    scalaVersion := "2.11.7",
+    version := "0.5.1",
     gitUserName := "malliina",
     developerName := "Michael Skogberg",
     organization := s"com.github.${gitUserName.value}",
-    libraryDependencies ++= Seq("com.github.malliina" %% "util-play" % "2.0.0"),
+    libraryDependencies ++= Seq("com.github.malliina" %% "util-play" % "2.0.1"),
     resolvers ++= Seq(
       sbt.Resolver.jcenterRepo,
       "Bintray malliina" at "http://dl.bintray.com/malliina/maven"),
