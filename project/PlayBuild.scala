@@ -10,7 +10,7 @@ object PlayBuild extends Build {
 
   lazy val projectSettings = Seq(
     scalaVersion := "2.11.7",
-    version := "0.5.1",
+    version := "0.5.2",
     gitUserName := "malliina",
     developerName := "Michael Skogberg",
     organization := s"com.github.${gitUserName.value}",

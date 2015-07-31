@@ -1,6 +1,2 @@
 @(divClass: String)(content: Html)
-
-<div class="@divClass">
-@content
-</div>
-
+@util.div2('class -> divClass)(content)
